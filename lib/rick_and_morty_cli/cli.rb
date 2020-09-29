@@ -53,8 +53,9 @@ class Cli
             back?(prompt)
           elsif input.downcase == "exit"
             exit_prompt
+            exit
           else
-            invalid_selection
+            invalid
             main_menu_start
         end
     end
@@ -93,7 +94,7 @@ class Cli
             system("clear")
             main_menu_start
             main_menu
-        else
+        elsif          
             exit_prompt
             exit
         end
@@ -113,30 +114,34 @@ class Cli
     def valid_id?(id)
         id = id.to_i
         if id < 1 || id > Character.all.size
-            print_error
-            sleep(1) 
+            invalid
             main_menu
         end
         id
     end
 
     def list_characters
-        Character.all.each.with_index(1) {|c, i| puts "#{i}.) #{c.name}"}
+        Character.all.each.with_index(1) {|c, i| puts "#{i}.) #{c.name}".green}
     end 
     
     def list_locations
-        Location.all.each.with_index(1) {|l, i| puts "#{i}.) #{l.name}"}
+        Location.all.each.with_index(1) {|l, i| puts "#{i}.) #{l.name}".green}
     end    
     
     
    def character_details(character)
-    puts " Id: #{character.id}"
+    puts "Id: #{character.id}"
     puts "Name: #{character.name}"
     puts "Status: #{character.status}"
     puts "Species: #{character.species}"
     puts "Gender :#{character.gender}"
 
        
+   end
+
+   def invalid
+    puts "Unacceptable! Please put a valid response.".red.bold
+    main_menu
    end
 
    def banner
