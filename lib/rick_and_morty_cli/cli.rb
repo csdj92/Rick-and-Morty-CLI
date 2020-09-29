@@ -44,7 +44,7 @@ class Cli
                 
         SHOW ME WHAT YOU'VE GOT
                 ".magenta
-                sleep(1.0)
+                sleep(1.5)
             list_characters
             second_menu
           elsif input.downcase == "location"
@@ -94,7 +94,7 @@ class Cli
             system("clear")
             main_menu_start
             main_menu
-        elsif          
+        elsif choice == "n"        
             exit_prompt
             exit
         end
@@ -108,13 +108,15 @@ class Cli
         system("clear")
         sleep (0.5)
         puts "Somthing clever from the show"
-        puts "Come again soon!"    
+        puts "Come again soon!"
+        exit    
     end
     
     def valid_id?(id)
         id = id.to_i
-        if id < 1 || id > Character.all.size
+        if id < 1 || id > Character.all.size 
             invalid
+            list_characters
             main_menu
         end
         id
@@ -141,8 +143,7 @@ class Cli
 
    def invalid
     puts "Unacceptable! Please put a valid response.".red.bold
-    main_menu
-   end
+    end
 
    def banner
     puts"
