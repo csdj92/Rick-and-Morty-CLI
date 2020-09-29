@@ -1,4 +1,4 @@
-class Locations
+class Location
     attr_accessor :name, :type, :dimension
 
     @@all = []

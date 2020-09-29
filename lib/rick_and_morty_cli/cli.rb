@@ -50,9 +50,9 @@ class Cli
             list_characters
             second_menu
           elsif input.downcase == "location"
-            list_location
+            list_locations
             go_back
-            back?(promt_selection)
+            back?(prompt)
           elsif input.downcase == "exit"
             exit_prompt
           else
@@ -120,6 +120,10 @@ class Cli
     def list_characters
         Character.all.each.with_index(1) {|c, i| puts "#{i}.) #{c.name}"}
     end 
+    
+    def list_locations
+        Location.all.each.with_index(1) {|l, i| puts "#{i}.) #{l.name}"}
+    end
 
     
     
@@ -128,6 +132,7 @@ class Cli
         puts "Aw geez geez, let me get things cleaned up in here.. ".red
         puts ""
         Api.get_characters
+        Api.get_locations
         puts "All done Rick!".blue
         puts ""
    end
