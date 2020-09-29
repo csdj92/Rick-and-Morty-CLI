@@ -48,8 +48,9 @@ class Cli
             list_characters
             second_menu
           elsif input.downcase == "location"
-            list_locations
+            list_locations          
             go_back
+            main_menu
             back?(prompt)
           elsif input.downcase == "exit"
             exit_prompt
@@ -94,7 +95,7 @@ class Cli
             system("clear")
             main_menu_start
             main_menu
-        elsif choice == "n"        
+        elsif          
             exit_prompt
             exit
         end
