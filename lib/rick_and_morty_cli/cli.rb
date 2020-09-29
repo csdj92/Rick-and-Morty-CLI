@@ -64,7 +64,7 @@ class Cli
             go_back
             back?(promt_selection)
           elsif input.downcase == "exit"
-            exit
+            exit_prompt
           else
             invalid_selection
             main_menu_start
@@ -88,6 +88,21 @@ class Cli
     def prompt
         gets.chomp
     end 
+
+    def back?
+        if choice == "y"
+            system("clear")
+            main_menu_start
+            main_menu
+        else
+            exit_prompt
+            exit
+        end
+    end
+
+            
+        
+    end
 
     def valid_id?(id)
         id = id.to_i
@@ -121,9 +136,9 @@ class Cli
    def character_details(character)
     puts " Id: #{character.id}"
     puts "Name: #{character.name}"
-    puts "#{character.status}"
-    puts "#{character.species}"
-    puts "#{character.gender}"
+    puts "Status: #{character.status}"
+    puts "Species: #{character.species}"
+    puts "Gender :#{character.gender}"
 
        
    end
