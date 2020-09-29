@@ -5,19 +5,9 @@ class Cli
     def call
         system("clear")
         banner
-        #wait
+        sleep(1.0)
         load
-        main_menu_start
-
-       # puts""
-        #puts "To view all characters from Rick and Morty, type 'list characters'"
-        #puts ""
-        #puts "TO view all the loctaions that are featured in the show type 'location'"
-        #puts ""
-      
-        #binding.pry
-
-      
+        main_menu_start     
     end
 
     def main_menu_start
@@ -101,14 +91,7 @@ class Cli
         end
     end
 
-    def exit_prompt
-        puts 
-    end
-
-            
-        
     
-
     def valid_id?(id)
         id = id.to_i
         if id < 1 || id > Character.all.size
@@ -124,6 +107,8 @@ class Cli
     end
 
     def exit_prompt
+        system("clear")
+        sleep (0.5)
         puts "Somthing clever from the show"
         puts "Come again soon!"    
     end
@@ -144,6 +129,7 @@ class Cli
         puts ""
         Api.get_characters
         puts "All done Rick!"
+        puts ""
    end
 
    def character_details(character)
