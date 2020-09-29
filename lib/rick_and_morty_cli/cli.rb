@@ -4,24 +4,34 @@ class Cli
    
     def call
         system("clear")
+        banner
+        #wait
+        load
+        main_menu_start
 
-        puts""
-        puts "To view all characters from Rick and Morty, type 'list characters'"
-        puts ""
-        puts "TO view all the loctaions that are featured in the show type 'location'"
-        puts ""
-        input = gets.chomp.downcase
+       # puts""
+        #puts "To view all characters from Rick and Morty, type 'list characters'"
+        #puts ""
+        #puts "TO view all the loctaions that are featured in the show type 'location'"
+        #puts ""
+      
         #binding.pry
 
-        if input.downcase == "list characters"
-            list_characters
-        end
+      
     end
 
-    def main_menu_selection 
+    def main_menu_start
+        puts "To view all characters from Rick and Morty, type 'list characters'"
+        puts ""
+        puts "To view all the loctaions that are featured in the show, type 'location'"
+        puts ""
+        puts "To exit, type exit"
+
+        main_menu
         
     end
 
+    
 
 
 
