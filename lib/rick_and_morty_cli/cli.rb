@@ -125,10 +125,10 @@ class Cli
     
     def load
         puts ''
-        puts "Aw geez geez, let me get things cleaned up in here.. "
+        puts "Aw geez geez, let me get things cleaned up in here.. ".red
         puts ""
         Api.get_characters
-        puts "All done Rick!"
+        puts "All done Rick!".blue
         puts ""
    end
 
