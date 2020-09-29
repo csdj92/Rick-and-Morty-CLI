@@ -7,7 +7,17 @@ class Api
         response = RestClient.get(url)
         data = JSON.parse(response.body)
         data.each do |c|
-            Character.new(c["char_id"], c["name"], c["birthday"], c["occupation"], c["nickname"], c["appearance"], c["portrayed"])
+            Character.new(c["id"], c["name"], c["status"], c["species"], c["gender"]
         end
     end
+
+    def self.get_locations
+        url = "https://rickandmortyapi.com/api/location/"
+        response = RestClient.get(url)
+        data = JSON.parse(response.body)
+        data.each do |l|
+            Location.new(l["name"], l["type"], ["dimension"])
+        end
+    end
+
 end
