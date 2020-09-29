@@ -1,6 +1,4 @@
 class Cli  
-  
-   
    
     def call
         system("clear")
@@ -71,6 +69,16 @@ class Cli
         main_menu_start
         main_menu
     end
+    
+    def load
+        puts ''
+        puts "Aw geez geez, let me get things cleaned up in here.. ".red
+        puts ""
+        Api.get_characters
+        Api.get_locations
+        puts "All done Rick!".blue
+        puts ""
+   end
 
     def character_selection_prompt
         puts "Please choose a character by number for more info."        
@@ -89,18 +97,7 @@ class Cli
             exit_prompt
             exit
         end
-    end
-
-    
-    def valid_id?(id)
-        id = id.to_i
-        if id < 1 || id > Character.all.size
-            print_error
-            sleep(1) 
-            main_menu
-        end
-        id
-    end
+    end   
 
     def go_back
         puts "Continue the journey with Rick and Morty? (y/n)"
@@ -112,10 +109,16 @@ class Cli
         puts "Somthing clever from the show"
         puts "Come again soon!"    
     end
-
-
-
-
+    
+    def valid_id?(id)
+        id = id.to_i
+        if id < 1 || id > Character.all.size
+            print_error
+            sleep(1) 
+            main_menu
+        end
+        id
+    end
 
     def list_characters
         Character.all.each.with_index(1) {|c, i| puts "#{i}.) #{c.name}"}
@@ -123,20 +126,9 @@ class Cli
     
     def list_locations
         Location.all.each.with_index(1) {|l, i| puts "#{i}.) #{l.name}"}
-    end
-
+    end    
     
     
-    def load
-        puts ''
-        puts "Aw geez geez, let me get things cleaned up in here.. ".red
-        puts ""
-        Api.get_characters
-        Api.get_locations
-        puts "All done Rick!".blue
-        puts ""
-   end
-
    def character_details(character)
     puts " Id: #{character.id}"
     puts "Name: #{character.name}"
