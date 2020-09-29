@@ -73,17 +73,17 @@ class Cli
 
     def second_menu
         character_selection_prompt
-        id=valid_id?(prompt)
+        id = valid_id?(prompt)
         character = Character.find_by_id(id)
         character_details(character)
         go_back
-        back?(promt)
+        back?(prompt)
         main_menu_start
         main_menu
     end
 
     def character_selection_prompt
-        puts "Please choose character by number for more info."        
+        puts "Please choose a character by number for more info."        
     end
     def prompt
         gets.chomp
@@ -119,6 +119,11 @@ class Cli
    end
 
    def character_details(character)
+    puts " Id: #{character.id}"
+    puts "Name: #{character.name}"
+    puts "#{character.status}"
+    puts "#{character.species}"
+    puts "#{character.gender}"
 
        
    end
