@@ -11,11 +11,11 @@ class Cli
     end
 
     def main_menu_start
-        puts "To view all characters from Rick and Morty, type 'list characters'"
+        puts "To view all characters from Rick and Morty, type 'list characters'".blue
         puts ""
-        puts "To view all the loctaions that are featured in the show, type 'location'"
+        puts "To view all the loctaions that are featured in the show, type 'location'".blue
         puts ""
-        puts "To exit, type exit"
+        puts "To exit, type exit".red
 
         main_menu
         
@@ -45,7 +45,7 @@ class Cli
                 `======/  
                 
         SHOW ME WHAT YOU'VE GOT
-                "
+                ".magenta
                 sleep(1.0)
             list_characters
             second_menu
@@ -150,7 +150,7 @@ class Cli
 ######  # #      ####      #    # # #  # #    #    #  #  # #    # #    #   #     #   
 #   #   # #      #  #      ###### #  # # #    #    #     # #    # #####    #     #   
 #    #  # #    # #   #     #    # #   ## #    #    #     # #    # #   #    #     #   
-#     # #  ####  #    #    #    # #    # #####     #     #  ####  #    #   #     #  "
+#     # #  ####  #    #    #    # #    # #####     #     #  ####  #    #   #     #  ".green
     end 
     
 
