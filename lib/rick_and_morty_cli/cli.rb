@@ -90,7 +90,7 @@ class Cli
         gets.chomp
     end 
 
-    def back?(prompt)
+    def back?(choice)
         if choice == "y"
             system("clear")
             main_menu_start
@@ -125,6 +125,8 @@ class Cli
     def list_characters
         Character.all.each.with_index(1) {|c, i| puts "#{i}.) #{c.name}"}
     end 
+
+    
     
     def load
         puts ''
