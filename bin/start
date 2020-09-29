@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 
-require_relative "../lib/rick"
+require_relative "../lib/rick.rb"
 
 Cli.new.call

@@ -5,7 +5,8 @@ class Api
         response = RestClient.get(url)
         data = JSON.parse(response.body)
         data.each do |c|
-            Character.new(c["id"], c["name"], c["status"], c["species"], c["gender"]
+            Character.new(c["id"], c["name"], c["status"], c["species"], c["gender"])
+       binding.pry
         end
     end
 

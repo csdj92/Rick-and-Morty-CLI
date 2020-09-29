@@ -3,8 +3,8 @@ class Character
     
     @@all = []
 
-    def initialize(attr_hash)
-        attr_hash.each do |k,v|
+    def initialize(attribute)
+        attribute.each do |k,v|
           self.send(("#{k}="), v) if self.respond_to?(("#{k}="))        
         end
         save
@@ -17,4 +17,10 @@ class Character
     def self.all
        @@all        
     end
+
+    def self.find_by_id(id)
+        index = id.to_i - 1
+        all[index]
+    end
+
 end
