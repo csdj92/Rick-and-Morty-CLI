@@ -35,6 +35,28 @@ class Cli
           input = gets.chomp.downcase
 
           if input.downcase == "list characters"
+            puts" 
+                ___          
+            . -^   `--,      
+           /# =========`-_   
+          /# (--====___====\ 
+         /#   .- --.  . --.| 
+        /##   |  * ) (   * ),
+        |##   \    /\ \   / |
+        |###   ---   \ ---  |
+        |####      ___)    #|
+        |######           ##|
+         \##### ---------- / 
+          \####           (  
+           `\###          |  
+             \###         |  
+              \##        |   
+               \###.    .)   
+                `======/  
+                
+        SHOW ME WHAT YOU'VE GOT
+                "
+                sleep(2.5)
             list_characters
             second_menu
           elsif input.downcase == "location"
@@ -53,7 +75,7 @@ class Cli
         character_selction_prompt
         id=valid_id?(prompt)
         character = Character.find_by_id(id)
-        character_details
+        character_details(character)
         go_back
         back?(promt_selection)
         main_menu_start
@@ -68,18 +90,35 @@ class Cli
     end 
     
     def load
-    Api.get_characters
+        puts ''
+        puts "Aw geez geez, let me get things cleaned up in here.. "
+        puts ""
+        Api.get_characters
+        puts "All done Rick!"
+   end
+
+   def character_details(character)
+
+       
    end
 
    def banner
+    puts"
 ######                                             #     #                           
 #     # #  ####  #    #      ##   #    # #####     ##   ##  ####  #####  ##### #   # 
 #     # # #    # #   #      #  #  ##   # #    #    # # # # #    # #    #   #    # #  
 ######  # #      ####      #    # # #  # #    #    #  #  # #    # #    #   #     #   
 #   #   # #      #  #      ###### #  # # #    #    #     # #    # #####    #     #   
 #    #  # #    # #   #     #    # #   ## #    #    #     # #    # #   #    #     #   
-#     # #  ####  #    #    #    # #    # #####     #     #  ####  #    #   #     #   
+#     # #  ####  #    #    #    # #    # #####     #     #  ####  #    #   #     #  "
+    end 
     
 
 
 end
+
+
+
+
+
+

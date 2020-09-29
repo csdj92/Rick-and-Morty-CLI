@@ -16,6 +16,7 @@ class Api
         response = RestClient.get(url)
         data = JSON.parse(response.body)
         data.each do |l|
+            binding.pry
             Location.new(l["name"], l["type"], ["dimension"])
         end
     end
