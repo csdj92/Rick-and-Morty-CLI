@@ -77,7 +77,7 @@ class Cli
         character = Character.find_by_id(id)
         character_details(character)
         go_back
-        back?(promt_selection)
+        back?(promt)
         main_menu_start
         main_menu
     end
