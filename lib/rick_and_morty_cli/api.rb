@@ -1,7 +1,5 @@
 class Api
 
-
-
     def self.get_character
         url = "https://rickandmortyapi.com/api/character/"
         response = RestClient.get(url)
