@@ -1,12 +1,13 @@
 class Api
 
-    def self.get_character
+    def self.get_characters
         url = "https://rickandmortyapi.com/api/character/"
         response = RestClient.get(url)
         data = JSON.parse(response.body)
-        data.each do |c|
-            Character.new(c["id"], c["name"], c["status"], c["species"], c["gender"])
-       binding.pry
+        data["results"].each do |c| 
+            #binding.pry
+            Character.new(id: c["id"],name: c["name"],status: c["status"],species: c["species"],gender: c["gender"])
+           
         end
     end
 
