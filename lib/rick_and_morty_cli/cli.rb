@@ -56,7 +56,7 @@ class Cli
                 
         SHOW ME WHAT YOU'VE GOT
                 "
-                sleep(2.5)
+                sleep(1.0)
             list_characters
             second_menu
           elsif input.downcase == "location"
@@ -101,6 +101,10 @@ class Cli
         end
     end
 
+    def exit_prompt
+        puts 
+    end
+
             
         
     
@@ -118,6 +122,12 @@ class Cli
     def go_back
         puts "Continue the journey with Rick and Morty? (y/n)"
     end
+
+    def exit_prompt
+        puts "Somthing clever from the show"
+        puts "Come again soon!"    
+    end
+
 
 
 
