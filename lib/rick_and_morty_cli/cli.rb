@@ -72,7 +72,7 @@ class Cli
     end
 
     def second_menu
-        character_selction_prompt
+        character_selection_prompt
         id=valid_id?(prompt)
         character = Character.find_by_id(id)
         character_details(character)
@@ -80,6 +80,27 @@ class Cli
         back?(promt_selection)
         main_menu_start
         main_menu
+    end
+
+    def character_selection_prompt
+        puts "Please choose character by number for more info."        
+    end
+    def prompt
+        gets.chomp
+    end 
+
+    def valid_id?(id)
+        id = id.to_i
+        if id < 1 || id > Character.all.size
+            print_error
+            sleep(1) 
+            main_menu
+        end
+        id
+    end
+
+    def go_back
+        puts "Continue the journey with Rick and Morty? (y/n)"
     end
 
 
