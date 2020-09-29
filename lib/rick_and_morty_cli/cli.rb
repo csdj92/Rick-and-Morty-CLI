@@ -85,11 +85,12 @@ class Cli
     def character_selection_prompt
         puts "Please choose a character by number for more info."        
     end
+
     def prompt
         gets.chomp
     end 
 
-    def back?
+    def back?(prompt)
         if choice == "y"
             system("clear")
             main_menu_start
@@ -102,7 +103,7 @@ class Cli
 
             
         
-    end
+    
 
     def valid_id?(id)
         id = id.to_i
