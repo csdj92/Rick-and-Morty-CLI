@@ -31,7 +31,35 @@ class Cli
         
     end
 
-    
+    def main_menu 
+          input = gets.chomp.downcase
+
+          if input.downcase == "list characters"
+            list_characters
+            second_menu
+          elsif input.downcase == "location"
+            list_location
+            go_back
+            back?(promt_selection)
+          elsif input.downcase == "exit"
+            exit
+          else
+            invalid_selection
+            main_menu_start
+        end
+    end
+
+    def second_menu
+        character_selction_prompt
+        id=valid_id?(prompt)
+        character = Character.find_by_id(id)
+        character_details
+        go_back
+        back?(promt_selection)
+        main_menu_start
+        main_menu
+    end
+
 
 
 
