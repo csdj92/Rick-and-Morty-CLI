@@ -1,5 +1,5 @@
 class Character
-    attr_accessor :id, :name, :status, :species, :gender
+    attr_accessor :id, :name, :status, :species, :gender, :location
     
     @@all = []
 

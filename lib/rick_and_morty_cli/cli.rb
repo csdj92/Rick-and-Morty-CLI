@@ -147,7 +147,9 @@ class Cli
     puts "Name: #{character.name}"
     puts "Status: #{character.status}"
     puts "Species: #{character.species}"
-    puts "Gender :#{character.gender}"
+    puts "Gender: #{character.gender}"
+    puts "Location: #{character.location}"
+    
 
        
    end
