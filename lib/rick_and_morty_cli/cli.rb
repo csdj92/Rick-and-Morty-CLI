@@ -9,9 +9,9 @@ class Cli
     end
 
     def main_menu_start
-        puts "To view all characters from Rick and Morty, type 'list characters'".blue
+        puts "To view all characters from Rick and Morty, type 'list characters'".blue.underline
         puts ""
-        puts "To view all the loctaions that are featured in the show, type 'location'".blue
+        puts "To view all the loctaions that are featured in the show, type 'location'".blue.underline
         puts ""
         puts "To exit, type exit".red
 
@@ -48,10 +48,11 @@ class Cli
             list_characters
             second_menu
           elsif input.downcase == "location"
-            list_locations          
-            go_back
-            main_menu
-            back?(prompt)
+           # list_locations          
+            #go_back
+            #main_menu
+            #back?(prompt)
+            location_menu
           elsif input.downcase == "exit"
             exit_prompt
             exit
@@ -70,6 +71,14 @@ class Cli
         back?(prompt)
         main_menu_start
         main_menu
+    end
+
+    def location_menu
+           list_locations          
+           go_back
+           back?(prompt)  
+           main_menu
+                 
     end
     
     def load
@@ -90,13 +99,14 @@ class Cli
         gets.chomp
     end 
 
-    def back?(choice)
-        if choice == "y"
+    def back?(prompt)
+        if prompt == "y"
             system("clear")
             main_menu_start
             main_menu
-        elsif          
+        elsif prompt == "n"      
             exit_prompt
+            sleep(0.7)
             exit
         end
     end   
@@ -143,7 +153,10 @@ class Cli
    end
 
    def invalid
-    puts "Unacceptable! Please put a valid response.".red.bold
+   system("clear")
+   puts "Unacceptable! Please put a valid response.".red.bold
+   puts""
+    
     end
 
    def banner
