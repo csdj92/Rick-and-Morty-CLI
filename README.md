@@ -7,7 +7,8 @@ This gem looks at the Goodreads Choice Award winners and provides the user with 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'best_books'
+gem 'best_books' gem 'pry' gem 'json'gem 'rest-client' gem 'colorize' gem'vine'
+
 ```
 
 And then execute:

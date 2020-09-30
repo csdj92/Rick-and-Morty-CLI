@@ -7,7 +7,5 @@ require 'pry'
 require 'json'
 require 'rest-client'
 require 'colorize'
-require "tty-prompt"
 require "vine"
 
-PROMPT = TTY::Prompt.new
