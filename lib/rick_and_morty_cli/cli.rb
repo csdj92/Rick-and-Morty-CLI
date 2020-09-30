@@ -21,37 +21,11 @@ class Cli
 
     def main_menu 
           input = gets.chomp.downcase
-
-          if input.downcase == "list characters"
-            puts" 
-                ___          
-            . -^   `--,      
-           /# =========`-_   
-          /# (--====___====\ 
-         /#   .- --.  . --.| 
-        /##   |  * ) (   * ),
-        |##   \    /\ \   / |
-        |###   ---   \ ---  |
-        |####      ___)    #|
-        |######           ##|
-         \##### ---------- / 
-          \####           (  
-           `\###          |  
-             \###         |  
-              \##        |   
-               \###.    .)   
-                `======/  
-                
-        SHOW ME WHAT YOU'VE GOT
-                ".magenta
-                sleep(1.5)
+          show_me_what_you_got
+          if input.downcase == "list characters"            
             list_characters
             second_menu
           elsif input.downcase == "location"
-           # list_locations          
-            #go_back
-            #main_menu
-            #back?(prompt)
             location_menu
           elsif input.downcase == "exit"
             exit_prompt
@@ -74,11 +48,15 @@ class Cli
     end
 
     def location_menu
-           list_locations          
-           go_back
-           back?(prompt)  
-           main_menu
-                 
+        list_locations  
+        character_selection_prompt 
+        id = valid_id?(prompt)
+        location = Location.find_by_id(id) 
+        location_details(location)     
+        go_back
+        back?(prompt)
+        main_menu_start  
+        main_menu                
     end
     
     def load
@@ -92,7 +70,7 @@ class Cli
    end
 
     def character_selection_prompt
-        puts "Please choose a character by number for more info."        
+        puts "Please choose a number for more info."        
     end
 
     def prompt
@@ -148,11 +126,17 @@ class Cli
     puts "Status: #{character.status}"
     puts "Species: #{character.species}"
     puts "Gender: #{character.gender}"
-    puts "Location: #{character.location}"
-    
-
-       
+    puts "Location: #{character.location}"     
    end
+
+   def location_details(location)
+    puts ""
+    puts "Name: #{location.name}"
+    puts "Type: #{location.type}"
+    puts "Dimension: #{location.dimension}"
+    puts""
+   end
+
 
    def invalid
    system("clear")
@@ -171,6 +155,32 @@ class Cli
 #    #  # #    # #   #     #    # #   ## #    #    #     # #    # #   #    #     #   
 #     # #  ####  #    #    #    # #    # #####     #     #  ####  #    #   #     #  ".green
     end 
+    
+    def show_me_what_you_got
+        puts" 
+                ___          
+            . -^   `--,      
+           /# =========`-_   
+          /# (--====___====\ 
+         /#   .- --.  . --.| 
+        /##   |  * ) (   * ),
+        |##   \    /\ \   / |
+        |###   ---   \ ---  |
+        |####      ___)    #|
+        |######           ##|
+         \##### ---------- / 
+          \####           (  
+           `\###          |  
+             \###         |  
+              \##        |   
+               \###.    .)   
+                `======/  
+                
+        SHOW ME WHAT YOU'VE GOT
+                ".magenta
+                sleep(1.5)
+        
+    end
     
 
 

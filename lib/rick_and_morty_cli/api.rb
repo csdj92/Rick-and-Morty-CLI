@@ -3,11 +3,7 @@ class Api
     def self.get_characters
         n = 1
         character_array = []
-        5.times do
-             
-
-
-      
+        5.times do    
         url = "https://rickandmortyapi.com/api/character?page=#{n}"
         n +=1
         response = RestClient.get(url)
