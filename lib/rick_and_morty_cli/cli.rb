@@ -9,9 +9,9 @@ class Cli
     end
 
     def main_menu_start
-        puts "To view all characters from Rick and Morty, type 'list characters'".blue.underline
+        puts "To view all characters from Rick and Morty, type '1'".blue.underline
         puts ""
-        puts "To view all the loctaions that are featured in the show, type 'location'".blue.underline
+        puts "To view all the loctaions that are featured in the show, type '2'".blue.underline
         puts ""
         puts "To exit, type exit".red
 
@@ -22,10 +22,10 @@ class Cli
     def main_menu 
           input = gets.chomp.downcase
           show_me_what_you_got
-          if input.downcase == "list characters"            
+          if input.downcase == "1"            
             list_characters
-            second_menu
-          elsif input.downcase == "location"
+            character_menu
+          elsif input.downcase == "2"
             location_menu
           elsif input.downcase == "exit"
             exit_prompt
@@ -36,7 +36,7 @@ class Cli
         end
     end
 
-    def second_menu
+    def character_menu
         character_selection_prompt
         id = valid_id?(prompt)
         character = Character.find_by_id(id)
@@ -65,7 +65,7 @@ class Cli
         puts ""
         Api.get_characters
         Api.get_locations
-        puts "All done Rick!".blue
+        puts "All done Rick!".green
         puts ""
    end
 
@@ -121,12 +121,14 @@ class Cli
     
     
    def character_details(character)
+    puts ""
     puts "Id: #{character.id}"
     puts "Name: #{character.name}"
     puts "Status: #{character.status}"
     puts "Species: #{character.species}"
     puts "Gender: #{character.gender}"
-    puts "Location: #{character.location}"     
+    puts "Location: #{character.location}" 
+    puts ""    
    end
 
    def location_details(location)
