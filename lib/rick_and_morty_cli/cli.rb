@@ -96,7 +96,7 @@ class Cli
     def exit_prompt
         system("clear")
         sleep (0.5)
-        puts "Somthing clever from the show"
+        end_banner
         puts "Come again soon!"
         exit    
     end
@@ -182,6 +182,31 @@ class Cli
                 ".magenta
                 sleep(1.5)
         
+    end
+
+    def end_banner
+        puts "                                                                                          `-                                                                
+        ``                                                                               .hd`                                                               
+  `.`./ymmds:..                                                                 .+`     `mN-                                                                
+:+dmmNMMMMMMMNm++-                                                             .dd     `oMs                                                                 
+sNMMMMMNddmMMMMMMh   .`                                                     `..hM:    `hMM/                                                                 
+`mMMM+/.``./oNMMMN: :mo`            /s+                                     hNmMMs    +MMMh                         `     ++                                
+ mMMMo      `+NMMM/ sMN.            hMs      ..                            :MMMMMm   `dMMMN`           ``         `yy`    sN/                               
+ .hMMm-      .NMMN- .++            `mMs   `:yy/                            hMNyMMM: .hMNMMM-           +y.oyo+`   sN/     mMd`                              
+  sMMMy`    `yMMM+  -hh`    .oyoo/ /MMy`:shho.        -          -y`      /MMy-dMMh`hMMyyNMs    :yhy/` yNmNmMN/  :NM+     hMMh`                             
+  /MMMM:  `-oMMMy`  /MN.  -smMd+/-`dMMmmNNs`        `+N- .   -.  dd`      yMMd .hMm-MMMs.NMd` -yNNMMN+ dMN+yMMm. yMm`     yMMM:       .:-                   
+  .dMMMdysmNMNy+`   /Mm. `dMd+.   /dmMMd+-`        .hmNo`do`/N/ /Mm`      +MMs  :NN+MMd-sMMM.-mMdyNMMs`mMMmmds/-:NMs-``   -NMMo    ./yhs.                   
+   /MMMMMMMMNs`     :NMs`+MMs     `-mMMd-          :Mhmm-NNdmN./mMs       sMM:   yMNMN. yMMM.sMN-`hMM+ +MMMm/ :sdMMmNdds:  yMMN+/shhy/.                     
+   `dMMNymNMMMy+-`  `NM/-NMN/:/-.- :MNdNm+-`       sMymMdMhmMmddyMo     `sNMm`   /MMMd  /MMd`.NMh/hMMN.+MddMN.  -NM/:/os-  oMMMNMm/.                        
+    dMMN..-sNmNMNd-  dN:`sdMNNNdys`/Mo`:mMN+      .Nh`:Nhd/-ddNhdNd`    .MMMh`   .oNN-  -NMh .dmMNMMd/ +M:.sNh` /MN.      .NMMds/.                          
+    oMMM:   ..:dMMmo`sm   .mm/-``  hN.  /NMN-      s-  //`  ``:+/od-    `hMh.      yd    +NM. `./so/`  /y`  yN. :Mh`   `+ydNms`                             
+    /MMN.      ./+NMs//    --     .d/    :NMs                     `      yMo        `    .NMy               :N+ -M/   -yNMy/.                               
+    -mMMs         -ommo.           `      /NN-                           yMo             `yMh                :: +N.  `yMNo`                                 
+     :NMd`          -sNd`                  om/                           sm`              .sN/                  :o `/dNd-                                   
+     `dMm.            +Nh`                 `.                            .-                `yo                   .:dNmo.                                    
+      .N/              /m:                                                                                    `-shhy+.``                                    
+       -`               .`                                                                                    +h/`                                          
+                                                                                                              `                                 "
     end
     
 

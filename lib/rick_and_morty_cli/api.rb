@@ -8,26 +8,32 @@ class Api
         n +=1
         response = RestClient.get(url)
         data = JSON.parse(response.body)
-        data["results"].each do |c| 
-            #binding.pry
+        data["results"].each do |c|             
             Character.new(id: c["id"],name: c["name"],status: c["status"],species: c["species"],gender: c["gender"],location: c["location"].access("name."))
+            
             character_array << data
-          
-          
-             end
+            end
         end
         character_array
-        #binding.pry
     end
 
     def self.get_locations
-        url = "https://rickandmortyapi.com/api/location/"
-        response = RestClient.get(url)
-        data = JSON.parse(response.body)
-        data["results"].each do |l|
-            #binding.pry
+        n = 1
+        location_array = []
+        5.times do 
+            url = "https://rickandmortyapi.com/api/location?page=#{n}"
+            n +=1
+            response = RestClient.get(url)
+            data = JSON.parse(response.body)
+         data["results"].each do |l|
             Location.new(name: l["name"], type: l["type"], dimension: l["dimension"])
+
+            location_array << data
+
+
         end
+        end
+        location_array
     end
 
 end
