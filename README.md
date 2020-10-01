@@ -1,42 +1,33 @@
 # Rick&Morty
 
-This gem looks at the Goodreads Choice Award winners and provides the user with a list of the categories and information about the winning book in each category, including: title, author, and a brief description. This information is pulled from https://www.goodreads.com/choiceawards/best-books-2018 
+This project looks at the Characters and locations from the T.V. show rick and morty to provide the user with a list of the people and places included in the award winning show , including: name, their status in the show, species and much more. This information is pulled from https://rickandmortyapi.com/api
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Add this line to your application's environment file:
 
 ```ruby
-gem 'best_books' gem 'pry' gem 'json'gem 'rest-client' gem 'colorize' gem'vine'
+ gem 'pry' gem 'json'gem 'rest-client' gem 'colorize' gem'vine'
 
 ```
 
-And then execute:
+And then execute in terminal:
 
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install best_books
+    $ gem install pry -v 0.10.3, gem install json, gem install rest-client, gem install colorize, gem install vine
 
 ## Usage
 
-Running ./bin/best_books will trigger the rest of the program to run. A menu is available at each decision point.
+Running ./bin/start will trigger the rest of the program to run. A menu is available at each decision point.
 
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+After checking out the repo, make sure to install the necessary gems listed in installation.
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/'mariel-delagarza'/best_books. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/csdj92/Rick-and-Morty-CLI. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+The project is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
 
-## Code of Conduct
-
-Everyone interacting in the BestBooks project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/'mariel-delagarza'/best_books/blob/master/CODE_OF_CONDUCT.md).
