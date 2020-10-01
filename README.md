@@ -1,4 +1,4 @@
-# BestBooks
+# Rick&Morty
 
 This gem looks at the Goodreads Choice Award winners and provides the user with a list of the categories and information about the winning book in each category, including: title, author, and a brief description. This information is pulled from https://www.goodreads.com/choiceawards/best-books-2018 
 

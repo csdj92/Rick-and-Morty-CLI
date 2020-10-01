@@ -105,7 +105,8 @@ class Cli
         id = id.to_i
         if id < 1 || id > Character.all.size 
             invalid
-            list_characters
+            character_menu
+            location_menu
             main_menu
         end
         id
@@ -141,8 +142,7 @@ class Cli
 
 
    def invalid
-   system("clear")
-   puts "Unacceptable! Please put a valid response.".red.bold
+      puts "Unacceptable! Please put a valid response.".red.bold
    puts""
     
     end
