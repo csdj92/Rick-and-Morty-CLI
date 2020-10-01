@@ -1,6 +1,6 @@
 # Rick&Morty
 
-This project looks at the Characters and locations from the T.V. show rick and morty to provide the user with a list of the people and places included in the award winning show , including: name, their status in the show, species and much more. This information is pulled from https://rickandmortyapi.com/api
+This project looks at the Characters and locations from the T.V. show Rick and Morty to provide the user with a list of the people and places included in the award winning show , including: name, their status in the show, species and much more. This information is pulled from https://rickandmortyapi.com/api
 
 ## Installation
 
